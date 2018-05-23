@@ -3,7 +3,6 @@ import {Card} from 'antd';
 import MyChart from '../common/MyChart';
 import axios from 'axios';
 
-
 let schema = [
 	{name: 'date', index: 0, text: '播放量'},
 	{name: 'AQIindex', index: 1, text: '收藏量'},
@@ -226,15 +225,8 @@ class Ugd extends React.Component {
 	componentDidMount() {
 		axios.post('/dimension/getNetEasyUgd').then(
 			res => {
-				let play = JSON.parse(res.data.data[0].data);
-				let collect = JSON.parse(res.data.data[1].data);
-				let share = JSON.parse(res.data.data[2].data);
-				let comment = JSON.parse(res.data.data[3].data);
-				let data = [];
-				for (let i = 0; i < play.length; i++) {
-					data.push([play[i],collect[i],share[i],comment[i]]);
-				}
-				option.series[0].data = data;
+
+				option.series[0].data = res.data.data;
 				this.setState({option});
 			}
 		).catch(
@@ -262,7 +254,7 @@ class Ugd extends React.Component {
 		return (
 			<div>
 				<Card title="Card title" bordered={false} style={{marginTop: 20}}>
-					<MyChart height={'800px'} option={this.state.option} isLoading={false}/>
+					<MyChart height={'600px'} option={this.state.option} isLoading={false}/>
 					{/*	<MyChart height={'800px'} option={this.state.option2} isLoading={false}/>*/}
 				</Card>
 			</div>

@@ -94,27 +94,26 @@ class SiderCustom extends Component {
 					<Menu.Item key="/app/statistics">
 						<Link to={'/app/statistics'}><Icon type="line-chart"/><span className="nav-text">曲库统计</span></Link>
 					</Menu.Item>
-					<Menu.Item key="/app/dashboard2/index">
-						<Link to={'/app/dashboard/top'}><Icon type="trophy"/><span className="nav-text">热度榜单</span></Link>
+					<Menu.Item key="/app/rank/index">
+						<Link to={'/app/rank/index'}><Icon type="trophy"/><span className="nav-text">热度榜单</span></Link>
 					</Menu.Item>
 					<SubMenu
 						key="/app/dimension"
 						title={<span><Icon type="api"/><span className="nav-text">特征分析</span></span>}
 					>
-						<Menu.Item key="/app/dimension"><Link to={'/app/form/basicForm'}>情感分析</Link></Menu.Item>
-						<Menu.Item key="/app/dimensions"><Link to={'/app/form/basicForm2'}>流派分析</Link></Menu.Item>
+						<Menu.Item key="/app/dimension/features"><Link to={'/app/dimension/features'}>音乐特征</Link></Menu.Item>
 						<Menu.Item key="/app/dimension/ugd"><Link to={'/app/dimension/ugd'}>用户行为</Link></Menu.Item>
 					</SubMenu>
 					<SubMenu
 						key="/app/levels"
 						title={<span><Icon type="fork"/><span className="nav-text">关联分析</span></span>}
 					>
-						<Menu.Item key="/app/levels/artists"><Link to={'/app/levels/artists'}>层次结构</Link></Menu.Item>
-						<Menu.Item key="/app/basicForm2135"><Link to={'/app/form/basicForm2'}>关系网络</Link></Menu.Item>
+						<Menu.Item key="/app/levels/tree"><Link to={'/app/levels/tree'}>层次结构</Link></Menu.Item>
+						<Menu.Item key="/app/levels/graph"><Link to={'/app/levels/graph'}>关系网络</Link></Menu.Item>
 
 					</SubMenu>
-					<Menu.Item key="/app/dashboarda/sindex">
-						<Link to={'/app/dashboards/index'}><Icon type="scan"/><span className="nav-text">音乐百科</span></Link>
+					<Menu.Item key="/app/musicbrainz">
+						<Link to={'/app/musicbrainz'}><Icon type="scan"/><span className="nav-text">音乐百科</span></Link>
 					</Menu.Item>
 					<SubMenu
 						key="/app/database"
